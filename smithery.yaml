@@ -1,38 +1,20 @@
-# Smithery.ai configuration
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
 startCommand:
   type: stdio
   configSchema:
     # JSON Schema defining the configuration options for the MCP.
-    {
-      "type": "object",
-      "properties": {
-          "accessToken": {
-              "type": "string",
-              "description": "Apifox Access Token"
-          },
-          "projectId": {
-              "type": "integer",
-              "description": "Apifox Project ID"
-          }
-      },
-      "required": [
-          "accessToken",
-          "projectId"
-      ]
-    }
+    {}
   commandFunction:
-    # A function that produces the CLI command to start the MCP on stdio.
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
     |-
     (config) => ({
       "command": "node",
       "args": [
         "dist/index.js",
-        "--project-id",
-        config.projectId
+        "--project-id=<project-id>"
       ],
       "env": {
-        "APIFOX_ACCESS_TOKEN": config.accessToken
+        "APIFOX_ACCESS_TOKEN": "<access-token>"
       }
     })
-
-
