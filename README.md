@@ -1,5 +1,7 @@
 # Apifox MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@apifox/apifox-mcp-server)](https://smithery.ai/server/@apifox/apifox-mcp-server)
+
 使用 Apifox MCP Server，可以将 Apifox 项目内的接口文档作为数据源提供给 Cursor 等支持 AI 编程的 IDE 工具以便让 AI 能够直接访问项目对应的接口文档数据。
 
 开发者可以通过 AI 助手完成以下工作：根据接口文档生成或修改代码、搜索接口文档内容等等，至于通过这个接口文档数据能让 AI 干什么更多更强大的活，请发挥你和你们团队的想象力😜
@@ -19,14 +21,24 @@
 
 ## 🚀 安装方法
 
-### 前置条件
+### 安装
+
+#### Installing via Smithery
+
+To install Apifox MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@apifox/apifox-mcp-server):
+
+```bash
+npx -y @smithery/cli install @apifox/apifox-mcp-server --client claude
+```
+
+#### 前置条件
 
 - 已安装 Node.js 环境（版本号 >= 18，推荐最新的 LTS 版本）
 - 任意一个支持 MCP 的 IDE：
   - Cursor
   - VSCode + Cline 插件
 
-### 安装
+#### 安装
 
 1. **在 Apifox 生成 Access Token**
     a. 打开 Apifox，将鼠标悬停在页面右上角的头像上，点击 “账号设置 -> API 访问令牌”
