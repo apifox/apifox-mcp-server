@@ -3,7 +3,23 @@ startCommand:
   type: stdio
   configSchema:
     # JSON Schema defining the configuration options for the MCP.
-    {}
+    {
+      "type": "object",
+      "properties": {
+          "accessToken": {
+              "type": "string",
+              "description": "Apifox Access Token"
+          },
+          "projectId": {
+              "type": "integer",
+              "description": "Apifox Project ID"
+          }
+      },
+      "required": [
+          "accessToken",
+          "projectId"
+      ]
+    }
   commandFunction:
     # A function that produces the CLI command to start the MCP on stdio.
     |-
@@ -11,10 +27,12 @@ startCommand:
       "command": "node",
       "args": [
         "dist/index.js",
-        "--project-id=<project-id>"
+        "--project-id",
+        config.projectId
       ],
       "env": {
-        "APIFOX_ACCESS_TOKEN": "<access-token>"
+        "APIFOX_ACCESS_TOKEN": config.accessToken
       }
     })
+
 
