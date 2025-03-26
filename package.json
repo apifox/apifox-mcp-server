@@ -1,0 +1,19 @@
+{
+  "name": "apifox-mcp-server",
+  "version": "0.0.10",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": {
+    "apifox-mcp-server": "dist/index.js"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "dist/index.js",
+    "README.md"
+  ],
+  "devDependencies": {},
+  "dependencies": {}
+}
